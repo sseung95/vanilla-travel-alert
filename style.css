@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+button{
+    border:none;
+    background: none;
+    cursor: pointer;
+}
+
+.wrap{
+    margin:0 auto;
+    width:600px;
+}
+
+header{
+    border-bottom: 1px solid #ddd;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    font-size:30px;
+    font-weight: 600;
+    letter-spacing: -2px;
+    margin-top:93px;
+}
+
+.search{
+    margin-top:30px;
+}
+
+.search>input{
+    width:600px;
+    height:50px;
+    text-indent: 10px;
+}
+
+.search>button{
+    width:50px;
+    height:50px;
+    position:absolute;
+    margin-left:-50px;
+}
+
+.notice{
+    margin-top:20px;
+    font-size:14px;
+    letter-spacing: -1px;
+}
+
+main{
+    border:1px solid #ddd;
+    height:504px;
+    margin-top:90px;
+}
+main>div{
+    padding:70px 50px;
+    display: flex;
+}
+
+.left{
+    width:188px;
+    height:365px;
+}
+
+.national-flag{
+    width:187px;
+    height:124px;
+    border:1px solid #ddd;
+}
+
+.info{
+    margin-top:35px;
+    font-size: 20px;
+}
+
+.info>div:first-child{
+    display: flex;
+}
+
+.country-iso{
+    margin-left:10px;
+    color:#888;
+}
+
+.country-name-en{
+    margin-top:25px;
+}
+
+.continent-name{
+    margin-top:25px;
+}
+
+.right{
+    width:275px;
+    height:365px;
+    margin-left: 37px;
+    border:1px solid #ddd
+}

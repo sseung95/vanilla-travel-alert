@@ -35,14 +35,15 @@ async function search() {
     if (searchText === '') {
       throw new Error('국가를 입력해주세요.');
     }
-    // 검색단어가 영문일때
-    if (enExpression.test(searchText)) {
-      // TODO: ISO 국가코드로 검색가능하도록
-      throw new Error('국가명을 한글로 적어주세요.');
-    }
 
-    // 요청 url 생성
-    const requestUrl = `${URL}ServiceKey=${SERVICE_KEY}&numOfRows=${NUM_OF_ROWS}&pageNo=${PAGE_NO}&cond[country_nm::EQ]=${searchText}`;
+    let requestUrl = `${URL}ServiceKey=${SERVICE_KEY}&numOfRows=${NUM_OF_ROWS}&pageNo=${PAGE_NO}`;
+
+    // 검색단어가 영문일때 ISO 검색
+    if (enExpression.test(searchText)) {
+      requestUrl = `${requestUrl}&cond[country_iso_alp2::EQ]=${searchText}`;
+    } else {
+      requestUrl = `${requestUrl}&cond[country_nm::EQ]=${searchText}`;
+    }
 
     // fetch로 요청하여 데이터 받아옴
     const data = await fetchUrl(requestUrl);
@@ -76,6 +77,7 @@ async function search() {
 
 // fetch 요청해서 data 값 받아오는 함수
 async function fetchUrl(requestUrl) {
+  console.log(requestUrl);
   const res = await fetch(requestUrl);
   const data = await res.json();
 

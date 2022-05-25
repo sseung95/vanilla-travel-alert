@@ -10,6 +10,12 @@ PS. 팀원끼리 각자 코드 작성 후 코드리뷰 진행
 
 <br />
 
+## 구현된 모습
+
+> https://seung-travel-alert.netlify.app/
+
+<br />
+
 ## 와이어프레임
 
 ![와이어프레임이미지](./wireframe.png)
